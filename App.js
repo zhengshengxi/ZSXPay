@@ -46,10 +46,14 @@ export default class App extends Component<Props> {
         })
     }
     wechatpay(){
-        Pay.wechat_pay({info:'Hello'});
+        Pay.wechat_pay({partnerId:'1',prepayId:'1',packageValue:'1',nonceStr:'1',timeStamp:'1',sign:'1',},(callback)=>{
+            console.log(callback);
+        });
     }
     alipay(){
-        Pay.alipay_pay('Hello');
+        Pay.alipay_pay('Hello','zsxPayAlipayScheme',(result)=>{
+            console.log(result);
+        });
     }
     uppay(){
         Pay.up_pay({info:'Hello'});
